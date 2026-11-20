@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEW — T-shirt Store</title>
+<style>
+:root{--navy:#101522;--blue:#285bd6;--pale:#edf2ff;--muted:#697386;--line:#e7eaf1}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans Bengali",sans-serif;color:var(--navy)}a{text-decoration:none;color:inherit}
+.top{background:var(--navy);color:white;text-align:center;padding:9px;font-size:12px;letter-spacing:1px}
+header{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line);padding:16px 6%;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:28px;font-weight:900;letter-spacing:5px}.logo span{color:var(--blue)}nav{display:flex;gap:24px;font-size:14px;color:#465066}.cartbtn,.btn{border:0;border-radius:30px;padding:12px 18px;font-weight:bold;cursor:pointer}.cartbtn{background:var(--navy);color:white}
+.hero{width:88%;margin:28px auto 55px;border-radius:24px;padding:55px 7%;min-height:390px;color:white;background:linear-gradient(110deg,#101522,#172d60 65%,#285bd6);display:grid;grid-template-columns:1.2fr .8fr;align-items:center;overflow:hidden}
+.eyebrow{font-size:12px;letter-spacing:3px;color:#c2d2ff}.hero h1{font-size:clamp(42px,6vw,68px);line-height:1.04;margin:18px 0}.hero p{line-height:1.8;color:#dce5ff;max-width:450px}.btn{display:inline-block;background:#fff;color:#14244a;margin-top:12px}
+.shirt{width:235px;height:260px;margin:auto;position:relative;filter:drop-shadow(0 25px 25px #0006)}.shirt svg{width:100%;height:100%}
+.section{width:88%;margin:0 auto 60px}.head{margin-bottom:24px}.tag{font-size:11px;letter-spacing:2px;color:var(--blue);font-weight:bold}.head h2{font-size:30px;margin:8px 0}.muted{font-size:13px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{border:1px solid var(--line);border-radius:17px;overflow:hidden}.photo{height:220px;display:grid;place-items:center;background:linear-gradient(135deg,#f1f4fb,#e0e9ff)}.card:nth-child(2) .photo{background:linear-gradient(135deg,#f5f0ed,#eadbd5)}.card:nth-child(3) .photo{background:linear-gradient(135deg,#eceef2,#d9deea)}.photo svg{width:135px;height:155px;filter:drop-shadow(0 12px 10px #0002)}.info{padding:16px}.info h3{margin:7px 0}.price{font-weight:800;color:var(--blue);margin:12px 0}.sizes{font-size:12px;color:var(--muted);margin-bottom:12px}.add{width:100%;border:0;background:var(--navy);color:#fff;border-radius:9px;padding:12px;cursor:pointer;font-weight:bold}
+.pay{background:#f6f8fc;padding:35px 6%;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center}.pay div{background:white;border-radius:14px;padding:20px}.pay b{display:block;margin:8px}.pay p{font-size:12px;color:var(--muted);line-height:1.6;margin:0}
+footer{background:var(--navy);color:#fff;padding:35px 6%;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer p{font-size:13px;color:#b7c1d4}
+.overlay{display:none;position:fixed;inset:0;background:#0008;z-index:10;justify-content:flex-end}.panel{width:min(420px,100%);height:100%;overflow:auto;background:white;padding:24px}.paneltop{display:flex;justify-content:space-between;align-items:center}.close{border:0;border-radius:50%;padding:10px;cursor:pointer}.item{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}.checkout{width:100%;padding:14px;border:0;border-radius:10px;background:var(--blue);color:white;font-weight:bold;margin-top:15px;cursor:pointer}
+@media(max-width:700px){nav{display:none}.hero{grid-template-columns:1fr;padding:38px 8%}.shirt{width:170px;height:190px;margin-top:22px}.grid{grid-template-columns:1fr 1fr;gap:12px}.photo{height:160px}.photo svg{width:105px;height:125px}.pay{grid-template-columns:1fr}.section{width:90%}}
+@media(max-width:420px){.grid{grid-template-columns:1fr}.photo{height:205px}}
+</style>
+</head>
+<body>
+<div class="top">DEW CLOTHING · EVERYDAY STYLE, PREMIUM FEEL</div>
+<header><a class="logo" href="#">D<span>E</span>W.</a><nav><a href="#home">Home</a><a href="#shop">T-shirts</a><a href="#payment">Payment</a><a href="#contact">Contact</a></nav><button class="cartbtn" onclick="openCart()">Cart (<span id="count">0</span>)</button></header>
+<section class="hero" id="home"><div><div class="eyebrow">THE DEW T-SHIRT COLLECTION</div><h1>Wear your<br>own style.</h1><p>তোমার প্রতিদিনের স্টাইলের জন্য আরামদায়ক ও সুন্দর গেঞ্জি। DEW-এর নতুন কালেকশন থেকে পছন্দের ডিজাইন বেছে নাও।</p><a class="btn" href="#shop">Shop Collection →</a></div><div class="shirt"><svg viewBox="0 0 240 260" aria-label="DEW T-shirt"><path d="M77 22 96 9 Q120 29 144 9 L163 22 224 58 198 112 174 99 174 250 66 250 66 99 42 112 16 58Z" fill="#f7f8fc" stroke="#c8d2e8" stroke-width="3"/><path d="M96 10 Q120 56 144 10" fill="none" stroke="#c8d2e8" stroke-width="4"/><text x="120" y="145" font-size="27" font-weight="bold" letter-spacing="5" text-anchor="middle" fill="#285bd6">DEW</text></svg></div></section>
+<section class="section" id="shop"><div class="head"><div class="tag">FRESH DROP</div><h2>গেঞ্জির কালেকশন</h2><div class="muted">তোমার পছন্দের DEW T-shirt বেছে নাও</div></div><div class="grid" id="products"></div><p class="muted">নমুনা পণ্য ও মূল্য দেখানো হয়েছে। নিজের আসল পণ্যের ছবি, নাম ও দাম দিয়ে আপডেট করতে হবে।</p></section>
+<section class="pay" id="payment"><div><div style="font-size:27px">৳</div><b>bKash</b><p>বিকাশ পেমেন্টের ব্যবস্থা রাখা হবে। নিরাপদ পেমেন্ট যাচাইয়ের জন্য অনুমোদিত মার্চেন্ট ইন্টিগ্রেশন প্রয়োজন।</p></div><div><div style="font-size:27px">৳</div><b>Nagad</b><p>নগদ পেমেন্টের ব্যবস্থা রাখা হবে। অনুমোদিত পেমেন্ট ইন্টিগ্রেশন যুক্ত হলে অনলাইন পেমেন্ট সম্পন্ন হবে।</p></div><div><div style="font-size:27px">f</div><b>Facebook Order</b><p>Facebook Messenger-এ সরাসরি অর্ডার করতে পারবে। পেজের লিংক যুক্ত করতে হবে।</p></div></section>
+<footer id="contact"><div><div class="logo">DEW.</div><p>Everyday style. Made simple.</p></div><div><b>Contact DEW</b><p>Facebook: তোমার পেজের লিংক এখানে যুক্ত হবে</p><p>© 2026 DEW Clothing</p></div></footer>
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeCart()"><div class="panel"><div class="paneltop"><h2>তোমার কার্ট</h2><button class="close" onclick="closeCart()">✕</button></div><div id="cartItems"></div><div id="total"></div><button class="checkout" onclick="sendOrder()">Facebook-এ অর্ডার করো</button><p class="muted">Facebook অর্ডার চালু করতে পেজের Messenger লিংক বসাতে হবে। বিকাশ/নগদ পেমেন্ট চালুর জন্য মার্চেন্ট ইন্টিগ্রেশন প্রয়োজন।</p></div></div>
+<script>
+const products=[
+{id:1,name:"DEW Classic Tee",desc:"Regular fit · Cotton feel",price:450,color:"#171b25"},
+{id:2,name:"DEW Street Tee",desc:"Relaxed fit · Everyday wear",price:550,color:"#e8d7cb"},
+{id:3,name:"DEW Signature Tee",desc:"Premium look · Minimal print",price:650,color:"#285bd6"}
+];
+const FB_PAGE_URL="https://m.me/61596920394306"; // DEW Facebook Messenger
+let cart=[];
+function shirt(color){return `<svg viewBox="0 0 180 190"><path d="M57 17 73 8 Q90 26 107 8 L123 17 170 45 150 91 132 81 132 183 48 183 48 81 30 91 10 45Z" fill="${color}" stroke="#0002" stroke-width="2"/><path d="M73 9 Q90 42 107 9" fill="none" stroke="#ffffff88" stroke-width="3"/><text x="90" y="111" font-size="17" font-weight="bold" letter-spacing="3" text-anchor="middle" fill="${color==='#e8d7cb'?'#26334d':'white'}">DEW</text></svg>`}
+function render(){document.getElementById('products').innerHTML=products.map(p=>`<article class="card"><div class="photo">${shirt(p.color)}</div><div class="info"><div class="tag">DEW CLOTHING</div><h3>${p.name}</h3><div class="muted">${p.desc}</div><div class="price">৳${p.price}</div><div class="sizes">Sizes: M · L · XL · XXL</div><button class="add" onclick="add(${p.id})">Add to Cart</button></div></article>`).join('')}
+function add(id){let p=products.find(x=>x.id===id),i=cart.find(x=>x.id===id);if(i)i.qty++;else cart.push({...p,qty:1});update()}
+function update(){document.getElementById('count').textContent=cart.reduce((a,b)=>a+b.qty,0);document.getElementById('cartItems').innerHTML=cart.length?cart.map(x=>`<div class="item"><div><b>${x.name}</b><div class="muted">৳${x.price} × ${x.qty}</div></div><b>৳${x.price*x.qty}</b></div>`).join(''):'<p class="muted">কার্টে এখনো কোনো পণ্য নেই।</p>';document.getElementById('total').innerHTML=cart.length?`<h3>মোট: ৳${cart.reduce((a,b)=>a+b.price*b.qty,0)}</h3>`:''}
+function openCart(){document.getElementById('overlay').style.display='flex';update()}function closeCart(){document.getElementById('overlay').style.display='none'}
+function sendOrder(){if(!cart.length){alert('আগে কার্টে পণ্য যোগ করো।');return}if(!FB_PAGE_URL){alert('Facebook অর্ডার চালু করতে DEW-এর Facebook Page/Messenger link যোগ করতে হবে।');return}let lines=cart.map(x=>`${x.name} — ${x.qty}টি — ৳${x.price*x.qty}`).join('\n');let total=cart.reduce((a,b)=>a+b.price*b.qty,0);let msg=encodeURIComponent(`হ্যালো DEW, আমি অর্ডার করতে চাই:\n${lines}\nমোট: ৳${total}`);window.open(FB_PAGE_URL,'_blank')}
+render();update();
+</script>
+</body></html>
